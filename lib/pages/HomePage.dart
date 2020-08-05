@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             blockCenter(),
-            blockEnd(),
+            blockEnd(context),
           ],
         ),
       ),
@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget blockEnd() {
+  Widget blockEnd(BuildContext context) {
     return Column(
       children: <Widget>[
         FlatButton(
@@ -79,7 +79,9 @@ class HomePage extends StatelessWidget {
               letterSpacing: 2,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/profile');
+          },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
